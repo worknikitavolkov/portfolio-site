@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ad8e51f131.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <title>Portfolio</title>
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <h1 class="logo">
+            <i class="fa fa-star" aria-hidden="true"></i> Portfolio
+        </h1>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    {% block content %} {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="{% static 'source.js' %}"></script>
+
+</body>
+
+</html>

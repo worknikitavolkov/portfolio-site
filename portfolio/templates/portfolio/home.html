@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<header id="showcase">
+    <div class="showcase-content">
+        <h1 class="l-heading">Nick's Portfolio Web-Site</h1>
+        <p class="lead">
+            Here, you can see all my projects in programming & design & music and get contact to me
+        </p>
+        <div class="links-group">
+            <a href="#about" class="btn">About Me</a>
+            <a href="#projects" class="btn">Projects</a>
+        </div>
+    </div>
+</header>
+
+<section id="about">
+    <div class="me">
+        <img src="{% static 'img/me.png' %}" alt="me">
+        <div class="text-content">
+            <h2 class="m-heading">Nikita Volkov</h2>
+            <p class="lead">
+                I'm a passionate software developer from Krasnoyarsk. I'm intrested in programming, math, linux, games, music and design.
+            </p>
+        </div>
+    </div>
+    <div class="skills">
+        <h2 class="m-heading text-center">Skills</h2>
+        <div class="skills-content">
+            <div class="skill">
+                <span class="lead">Javascript</span>
+                <progress max="100" value="100"></progress>
+            </div>
+            <div class="skill">
+                <span class="lead">Python</span>
+                <progress max="100" value="100"></progress>
+            </div>
+            <div class="skill">
+                <span class="lead">HTML & CSS</span>
+                <progress max="100" value="80"></progress>
+            </div>
+            <div class="skill">
+                <span class="lead">Django</span>
+                <progress max="100" value="70"></progress>
+            </div>
+            <div class="skill">
+                <span class="lead">C/C++</span>
+                <progress max="100" value="50"></progress>
+            </div>
+            <div class="skill">
+                <span class="lead">Linux</span>
+                <progress max="100" value="30"></progress>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2 class="m-heading text-center">Projects</h2>
+    <div class="projects-content container">
+        {% for project in projects %}
+            <div class="project">
+                <div>
+                    <img src="{{ project.image.url }}" alt="project">
+                    <h3 class="text-center">{{ project.title }}</h2>
+                    <p>{{ project.description }}</p>
+                </div>
+                <div class="links">
+                    {% if project.url %}
+                    <a class="btn btn-small" href="{{ project.url }}" target="_blank">
+                        <i class="fa fa-external-link" aria-hidden="true"></i>
+                        Link
+                    </a>
+                    {% endif %}
+                    {% if project.codeUrl %}
+                    <a class="btn btn-small" href="{{ project.codeUrl }}" target="_blank">
+                        <i class="fa fa-code" aria-hidden="true"></i>
+                        Code
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section id="contact">
+    <div class="contact-content container">
+        <div class="links">
+            <h2 class="m-heading">Contacts</h2>
+            <ul>
+                <li>
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                    <a href="https://github.com/worknikitavolkov">Github</a>
+                </li>
+                <li>
+                    <i class="fa fa-telegram" aria-hidden="true"></i>
+                    <a href="https://t.me/landayvolk">Telegram</a>
+                </li>
+                <li>
+                    <i class="fab fa-whatsapp-square"></i>
+                    <a href="https://api.whatsapp.com/send?phone=79233714100&text=I'm%20a%20software%20developer">WhatsUp</a>
+                </li>
+                <li>
+                    <i class="fa fa-vk" aria-hidden="true"></i>
+                    <a href="https://vk.com/volkssss">Vkontakte</a>
+                </li>
+            </ul>
+        </div>
+        <div class="form-wrap">
+            <form>
+                <div class="form-group">
+                    <label for = "first-name">First name</label>
+                    <input name = "first-name" id = "first-name" type="text">
+                </div>
+                <div class="form-group">
+                    <label for = "second-name">Second name</label>
+                    <input name = "second-name" id = "second-name" type="text">
+                </div>
+                <div class="form-group">
+                    <label for = "email">Email</label>
+                    <input name = "email" id = "email" type="email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" placeholder="Enter Message"></textarea>
+                </div>
+                <button class="btn-wide btn-dark" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

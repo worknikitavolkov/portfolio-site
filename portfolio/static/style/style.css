@@ -1,0 +1,310 @@
+/* Global */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Baloo Da 2', cursive;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+/* Utilities */
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.l-heading {
+    font-size: 5rem;
+}
+
+.m-heading {
+    font-size: 3rem;
+}
+
+.lead {
+    font-size: 1.8rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn {
+    text-decoration: none;
+    color: #000313;
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    min-width: 10rem;
+    margin: 1rem;
+    background: #8fc9e4;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.btn:hover {
+    box-shadow: 3px 3px 3px #00041a;
+}
+
+.btn-dark {
+    background: #00031a;
+    color: white;
+}
+
+.btn-dark:hover {
+    cursor: pointer;
+    background: #000525;
+}
+
+.btn-small {
+    min-width: 6rem;
+    padding: 0.3rem;
+}
+
+.btn-wide {
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Navbar */
+#navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #00041a;
+    color: white;
+    border-bottom: 2px solid #ffffff;
+}
+
+#navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+#navbar ul li {
+    font-size: 1.3rem;
+    padding: 0.5rem;
+}
+
+#navbar ul li a {
+    color: white;
+    padding: 0.5rem;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover {
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+/* Showcase */
+#showcase {
+    height: 100vh;
+    color: #d5f0fc;
+    background: url(../img/showcase.jpg) no-repeat center center/cover;
+}
+
+#showcase .showcase-content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
+}
+
+#showcase .links-group {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+
+/* About */
+#about {
+    display: flex;
+    color: #00041a;
+    background: #afc4df;
+}
+
+#about .me {
+    flex: 1;
+    line-height: 1.2;
+    padding: 2rem;
+}
+
+#about .me img {
+    display: block;
+    width: 35%;
+    margin: auto;
+    border-radius: 50%;
+}
+
+#about .skills {
+    padding: 1rem;
+    flex: 1;
+}
+
+#about .skills .skills-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#about .skills .skills-content .skill progress {
+    padding: 1rem;
+    width: 100%;
+}
+
+/* Projects */
+#projects {
+    background-image: linear-gradient(to right bottom, #03132a, #0a213f, #133056, #1d406e, #275087);
+    padding: 2rem;
+}
+
+#projects h2 {
+    color: #c6ddfc;
+}
+
+#projects .projects-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#projects .projects-content .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    width: 20rem;
+    height: 24rem;
+    margin: 0.5rem 1rem;
+    padding: 1rem;
+    background: #bde1f1;
+}
+
+#projects .projects-content .project img {
+    height: 10rem;
+    width: 100%;
+    border-radius: 10px;
+}
+
+#projects .projects-content .project .links {
+    display: flex;
+    justify-content: center;
+}
+
+/* Contacts */
+#contact {
+    padding: 2rem;
+    color: #00041a;
+    background: #afc4df;
+}
+
+#contact .contact-content {
+    display: flex;
+}
+
+#contact .links {
+    flex: 1;
+}
+
+#contact .links ul {
+    font-size: 1.5rem;
+    list-style: none;
+}
+
+#contact .links ul li a {
+    color: #00041a;
+    text-decoration: none;
+}
+
+#contact .links ul li a:hover {
+    text-decoration: underline;
+    color: #2e3763;
+}
+
+#contact .form-wrap {
+    font-size: 1.2rem;
+    flex: 2;
+}
+
+#contact .form-wrap label{
+    display: block;
+}
+
+#contact .form-wrap input, #contact .form-wrap textarea {
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid #001025;
+}
+
+#contact .form-wrap input:focus {
+    border: 2px solid #001025;
+}
+
+#contact .form-wrap textarea:focus {
+    border: 2px solid #001025;
+}
+
+@media screen and (max-width: 780px) {
+    html {
+        font-size: 90%;
+    }
+    .l-heading {
+        font-size: 3.3rem;
+    }
+    .m-heading {
+        font-size: 2.5rem;
+    }
+    .lead {
+        font-size: 1.7rem;
+    }
+
+    #about {
+        flex-direction: column;
+    }
+
+    #navbar {
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    html {
+        font-size: 75%;
+    }
+    .l-heading {
+        font-size: 2.7rem;
+    }
+    .m-heading {
+        font-size: 2.2rem;
+    }
+    .lead {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    html {
+        font-size: 60%;
+    }
+}
